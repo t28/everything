@@ -1,7 +1,10 @@
+require 'rubygems'
 require 'appengine-rack'
+require 'main'
+
 AppEngine::Rack.configure_app(
-    :application => "application-id",
+    :application => "everything",
     :version => 1)
 
-run lambda { Rack::Response.new("Hello World!") }
+run Sinatra::Application
 
